@@ -549,15 +549,6 @@ input[type=submit]:hover {
     width: 100%;
   }
 
-  /* #desktop {
-    display: none;
-    visibility: hidden;
-  }
-
-  #mobile {
-    display: block !important;
-  } */
-
   #mobile {
     display: none !important;
   }
