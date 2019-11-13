@@ -467,6 +467,10 @@ input[type=submit]:hover {
     -webkit-text-size-adjust: 100%;
   }
 
+  #navbar {
+    width: 100vw;
+  }
+
   #navbar a {
     font-size: 2vw;
   }
