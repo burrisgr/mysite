@@ -758,13 +758,16 @@ input[type=submit]:hover {
     /* height: 65vw; */
   }
 
-  #desktop {
+  /* #desktop {
     display: none;
     visibility: hidden;
-  }
+  } */
+
+  /* #mobile {
+    display: block !important;
+  } */
 
   #mobile {
-    display: block !important;
+    display: none !important;
   }
-
 }
