@@ -99,7 +99,7 @@ body {
 
 /* Header Tag code, contains the background image and title*/
 .jumbotron_container {
-  background-image: url("./assets/Homepageimg.jpg");
+  background-image: url("../assets/homeimg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
