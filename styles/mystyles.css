@@ -1,3 +1,6 @@
+html {
+  padding: env(safe-area-inset);
+}
 body {
   background-color: #333;
   font-size: 16px;
