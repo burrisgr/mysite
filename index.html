@@ -6,7 +6,8 @@
   <title>Art De Greg</title>
   <meta name="author" content="">
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, viewport-fit=cover">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, viewport-fit=cover">
 
   <link href="styles/mystyles.css" rel="stylesheet">
   <!-- <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet"> -->
@@ -46,95 +47,37 @@
     </div>
   </div>
 
-  <div id="desktop">
-    <div id="artworks">
-      <!-- Header -->
-      <div class="header" id="myHeader">
-        <h1>Artworks</h1>
-        <p>Click on the buttons to change the grid view.</p>
-        <button class="btn" onclick="one()">1</button>
-        <button class="btn active" onclick="two()">2</button>
-        <button class="btn" onclick="four()">4</button>
-      </div>
+  <div id="artworks">
+    <!-- Header -->
+    <div class="header" id="myHeader">
+      <h1>Artworks</h1>
+      <p>Click on the buttons to change the grid view.</p>
+      <button class="btn" onclick="one()">1</button>
+      <button class="btn active" onclick="two()">2</button>
+      <button class="btn" onclick="four()">4</button>
+    </div>
 
-      <!-- Photo Grid -->
-      <div class="row_gallery">
-        <div class="column_gallery">
-          <img src="./assets/IMG_0430.JPG" style="width:100%">
-          <img src="./assets/Tattoo.jpg" style="width:100%">
-        </div>
-        <div class="column_gallery">
-          <img src="./assets/Untitled_Artwork.JPG" style="width:100%">
-          <img src="./assets/IMG_0349.JPG" style="width:100%">
-        </div>
-        <div class="column_gallery">
-          <img src="./assets/Luna.jpg" style="width:100%">
-          <img src="./assets/Kylie.jpg" style="width:100%">
-        </div>
-        <div class="column_gallery">
-          <img src="./assets/supagood.jpg" style="width:100%">
-          <img src="./assets/SnakemanLuffy.jpg" style="width:100%">
-        </div>
+    <!-- Photo Grid -->
+    <div class="row_gallery">
+      <div class="column_gallery">
+        <img src="./assets/IMG_0430.JPG" style="width:100%">
+        <img src="./assets/Tattoo.jpg" style="width:100%">
+      </div>
+      <div class="column_gallery">
+        <img src="./assets/Untitled_Artwork.JPG" style="width:100%">
+        <img src="./assets/IMG_0349.JPG" style="width:100%">
+      </div>
+      <div class="column_gallery">
+        <img src="./assets/Luna.jpg" style="width:100%">
+        <img src="./assets/Kylie.jpg" style="width:100%">
+      </div>
+      <div class="column_gallery">
+        <img src="./assets/supagood.jpg" style="width:100%">
+        <img src="./assets/SnakemanLuffy.jpg" style="width:100%">
       </div>
     </div>
   </div>
 
-  <div id="mobile">
-    <div id="artworks">
-      <div class="slideshow-container">
-
-        <div class="mySlidesMobile fade">
-          <div class="flex_container3">
-            <div class="numbertext">1 / 6</div>
-            <img src="./assets/91A03ED8-37D7-4E00-A753-91B4713F5C66.JPG" class="slide_img">
-            <!-- <img src="/assets/IMG_0430.JPG" class="slide_img_2"> -->
-          </div>
-        </div>
-
-        <div class="mySlidesMobile fade">
-          <div class="flex_container3">
-            <div class="numbertext">2 / 6</div>
-            <img src="./assets/IMG_0430.JPG" class="slide_img">
-          </div>
-        </div>
-
-        <div class="mySlidesMobile fade">
-          <div class="flex_container3">
-            <div class="numbertext">3 / 6</div>
-            <img src="./assets/Untitled_Artwork.JPG" class="slide_img">
-            <!-- <img src="/assets/IMG_0349.JPG" class="slide_img_2"> -->
-          </div>
-        </div>
-
-
-        <div class="mySlidesMobile fade">
-          <div class="flex_container3">
-            <div class="numbertext">4 / 6</div>
-            <img src="./assets/IMG_0349.JPG" class="slide_img">
-          </div>
-        </div>
-
-        <div class="mySlidesMobile fade">
-          <div class="flex_container3">
-            <div class="numbertext">5 / 6</div>
-            <img src="./assets/supagood.jpg" class="slide_img">
-            <!-- <img src="/assets/Luna.jpg" class="slide_img_2"> -->
-          </div>
-        </div>
-
-        <div class="mySlidesMobile fade">
-          <div class="flex_container3">
-            <div class="numbertext">6 / 6</div>
-            <img src="./assets/Luna.jpg" class="slide_img">
-          </div>
-        </div>
-
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-      </div>
-    </div>
-  </div>
 
   <div id="contact">
     <div class="contact_container">
@@ -222,39 +165,6 @@
         this.className += " active";
       });
     }
-    // functioning slideshow of images
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlidesMobile");
-      if (n > slides.length) {
-        slideIndex = 1
-      }
-      if (n < 1) {
-        slideIndex = slides.length
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndex - 1].style.display = "block";
-    }
-
-    window.addEventListener("load", function () {
-      showSlides(slideIndex);
-      myTimer = setInterval(function () {
-        plusSlides(1)
-      }, 5000);
-    })
   </script>
 </body>
 
