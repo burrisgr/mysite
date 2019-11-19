@@ -10,6 +10,7 @@
     content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, viewport-fit=cover">
 
   <link href="styles/mystyles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto&display=swap" rel="stylesheet">
 </head>
@@ -24,6 +25,13 @@
         <li class="link4"><a href="#contact">Contact</a></li>
       </div>
       <div class="flex-container">
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+          <em>Enable Dark Mode</em>
+        </div>
         <h1 class="center_text">Welcome to <span class="white">Art de Greg</span></h1>
       </div>
     </header>
@@ -31,17 +39,26 @@
 
   <div id="about">
     <div class="about_container">
-      <div class="flex_container2">
-        <div class="flex_img">
-          <img src="./assets/IMG_0294.jpg" class="about_img">
+      <div class="card">
+        <img src="./assets/IMG_0294.jpg" alt="Greg" style="width:100%">
+        <h1>Hello, I'm Greg Burris</h1>
+        <p class="title">Designer, Developer, Graphic Artist </p>
+        <p>Co-Founder of Currently.</p>
+        <div style="margin: 24px 0;">
+          <a href="#"><i class="fa fa-dribbble"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-facebook"></i></a>
         </div>
-        <div class="flex_text">
+        <p><button class="about_btn">Contact</button></p>
+      </div>
+      <div class="mobile-padding">
+        <div class="information">
           <p class="about_text">Hello my name is Greg Burris, I am a graphic artist, web developer, and a painter. I
             currently attend Michigan State university marjoring in Media & Information and minioring in Graphic Design.
             My main skillset consists of Illustrator, Photoshop, Indesign, HTML5, CSS, and Javascript. My objective is
             to use my creative thinking tools, problem solving skills, technical skills, and communication skills to be
-            the
-            best designer/developer I can be.</p>
+            the best designer/developer I can be.</p>
         </div>
       </div>
     </div>
@@ -50,7 +67,7 @@
   <div id="artworks">
     <!-- Header -->
     <div class="header" id="myHeader">
-      <h1>Artworks</h1>
+      <h2>Artworks</h2>
       <p>Click on the buttons to change the grid view.</p>
       <button class="btn" onclick="one()">1</button>
       <button class="btn active" onclick="two()">2</button>
@@ -78,10 +95,9 @@
     </div>
   </div>
 
-
   <div id="contact">
     <div class="contact_container">
-      <div style="text-align:center">
+      <div style="text-align:center; margin-top: 50px;">
         <h2>Contact Me</h2>
         <p>Leave me a message to learn more about me, and Currently.</p>
       </div>
@@ -105,10 +121,15 @@
   </div>
 
   <div id="navbar">
-    <li class="link5"><a href="#home">Home</a></li>
-    <li class="link6"><a href="#about">About</a></li>
-    <li class="link7"><a href="#artworks">Artworks</a></li>
-    <li class="link8"><a href="#contact">Contact</a></li>
+    <div id="myLinks">
+      <a href="#home" onclick="theFunction()">Home</a>
+      <a href="#about" onclick="theFunction()">About</a>
+      <a href="#artworks" onclick="theFunction()">Artworks</a>
+      <a href="#contact" onclick="theFunction()">Contact</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
 
   <script>
@@ -121,7 +142,23 @@
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("navbar").style.top = "0";
       } else {
-        document.getElementById("navbar").style.top = "-50px";
+        document.getElementById("navbar").style.top = "-75px";
+      }
+    }
+
+    function myFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+
+    function theFunction() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
       }
     }
 
@@ -164,6 +201,39 @@
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
       });
+    }
+
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+
+    toggleSwitch.addEventListener('change', switchTheme, false);
+
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark'); //add this
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); //add this
+      }
+    }
+
+
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+
+      if (currentTheme === 'dark') {
+        toggleSwitch.checked = true;
+      }
     }
   </script>
 </body>

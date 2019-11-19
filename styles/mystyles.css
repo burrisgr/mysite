@@ -1,5 +1,6 @@
 body {
-  background-color: #333;
+  /* background-color: #333; */
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -11,31 +12,44 @@ body {
 
 /* Code for the hidden nav bar */
 /* Hidden Navbar */
+
+#navbar #myLinks {
+  display: none;
+}
+
 #navbar {
   background-color: #333;
   border-bottom-style: solid;
   border-bottom-color: red;
   position: fixed;
-  top: -50px;
   width: 100%;
   display: grid;
   list-style-type: none;
   transition: top 0.3s;
   text-align: center;
-  padding: 10px;
+  padding: 29px;
 }
 
 #navbar a {
-  color: #f2f2f2;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
   font-size: 23px;
+  color: white;
+  padding: 14px 16px;
+  display: block;
+}
+
+#navbar a.icon {
+  background: #333;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #navbar a:hover {
+  background-color: #333;
   color: red;
 }
-
 
 .link5 {
   grid-column: 1/2;
@@ -69,7 +83,6 @@ body {
   border-radius: 5px;
   color: #f2f2f2;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
   font-size: 25px;
 }
 
@@ -126,46 +139,74 @@ body {
 
 /* About Section code, contains background color, text, and images */
 .about_container {
-  background-color: #333;
+  /* background-color: #333; */
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.flex_container2 {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
+.mobile-padding {
+  margin: auto;
 }
 
-.flex_img {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+.information {
+  grid-column: 2;
+  margin: auto;
+  border-left: 5px solid white;
+  padding: 1em;
 }
 
-.flex_text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  background-color: white;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  grid-column: 1;
+  padding: 1em;
 }
 
-.about_img {
-  height: 350px;
-  width: 600px;
-  padding: 20px;
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.about_btn {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.about_btn:hover,
+a:hover {
+  background-color: red;
+  color: white;
 }
 
 .about_text {
-  padding: 10px;
+  padding-right: 50px;
   font-size: 25px;
   color: white;
+  border-left: 5px !important;
+  border-left-color: white !important;
 }
 
 /* Artworks Grid View */
 .header {
   color: white;
-  font-family: 'Roboto', sans-serif;
   text-align: center;
   padding: 32px;
 }
@@ -244,14 +285,14 @@ input[type=submit]:hover {
 /* Style the container/contact section */
 .contact_container {
   height: 100vh;
-  background-color: #333;
+  /* background-color: #333; */
   color: white;
   padding: 10px;
 }
 
 .contact_img {
   width: 100%;
-  /* height: 65vw; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 /* Create two columns that float next to eachother */
@@ -361,8 +402,8 @@ input[type=submit]:hover {
   }
 
   .about_text {
-    padding: 2vw 4vw 1vw 4vw;
-    font-size: 2em;
+    padding: 10px;
+    font-size: 1.5em;
     color: white;
   }
 
@@ -372,6 +413,10 @@ input[type=submit]:hover {
 @media only screen and (min-width : 640px) and (max-width : 1024px) {
   body {
     background-color: coral;
+  }
+
+  #navbar {
+    padding: 27px;
   }
 
   #navbar a {
@@ -421,8 +466,8 @@ input[type=submit]:hover {
   }
 
   .about_text {
-    padding: 0vw 4vw 1vw 4vw;
-    font-size: 1.8em;
+    padding: 10px;
+    font-size: 1.5em;
     color: white;
   }
 
@@ -440,6 +485,10 @@ input[type=submit]:hover {
 @media only screen and (min-width : 480px) and (max-width: 640px) {
   body {
     background-color: lightblue;
+  }
+
+  #navbar {
+    padding: 23px;
   }
 
   #navbar a {
@@ -463,35 +512,28 @@ input[type=submit]:hover {
   }
 
   .about_container {
-    height: 100vh;
+    height: 1000px;
+    display: grid;
+    grid-template-columns: 1fr;
+
   }
 
-  .flex_container2 {
-    display: flex;
-    flex-direction: column;
+  .card {
+    grid-column: 1;
+    margin-top: 50px;
   }
 
-  .flex_img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .information {
+    grid-column: 1/2;
   }
 
-  .flex_text {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .about_img {
-    height: 70vw;
-    width: 100vw;
-    padding: 3vw 3vw 0vw 3vw;
+  .mobile-padding {
+    padding: 25px;
   }
 
   .about_text {
-    font-size: 1.5em;
-    padding: 3vw 3vw 0vw 3vw;
+    padding: 0px;
+    font-size: 1.4em;
     color: white;
   }
 
@@ -508,6 +550,10 @@ input[type=submit]:hover {
 @media only screen and (max-width : 480px) {
   body {
     background-color: lightpink;
+  }
+
+  #navbar {
+    padding: 24px;
   }
 
   #navbar a {
@@ -535,35 +581,28 @@ input[type=submit]:hover {
   }
 
   .about_container {
-    height: 100vh;
+    height: 1250px;
+    display: grid;
+    grid-template-columns: 1fr;
+
   }
 
-  .flex_container2 {
-    display: flex;
-    flex-direction: column;
+  .card {
+    grid-column: 1;
+    margin-top: 50px;
   }
 
-  .flex_img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .information {
+    grid-column: 1/2;
   }
 
-  .flex_text {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .about_img {
-    height: 70vw;
-    width: 100vw;
-    padding: 3vw 3vw 0vw 3vw;
+  .mobile-padding {
+    padding: 25px;
   }
 
   .about_text {
-    font-size: 5vw;
-    padding: 3vw 3vw 0vw 3vw;
+    padding: 0px;
+    font-size: 1.4em;
     color: white;
   }
 
@@ -573,7 +612,141 @@ input[type=submit]:hover {
 
   .contact_img {
     width: 100%;
-    /* height: 65vw; */
   }
 
+}
+
+:root {
+  --primary-color: #302AE6;
+  --secondary-color: red;
+  --title-color: red;
+  --font-color: #000;
+  --fa-color: red;
+  --bg-color: white;
+  --heading-color: #292922;
+  --card-color: white;
+}
+
+[data-theme="dark"] {
+  --primary-color: #9A97F3;
+  --secondary-color: white;
+  --title-color: red;
+  --font-color: white;
+  --fa-color: red;
+  --bg-color: #333;
+  --heading-color: #818cab;
+  --card-color: #000;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+
+  /*other styles*/
+}
+
+.title {
+  color: var(--title-color);
+}
+
+h2 {
+  color: var(--secondary-color);
+}
+
+.fa {
+  color: var(--fa-color);
+}
+
+a {
+  color: var(--primary-color);
+
+  /*other styles*/
+}
+
+p {
+  color: var(--font-color);
+}
+
+.card {
+  background-color: var(--card-color);
+}
+
+label {
+  color: var(--secondary-color);
+}
+
+.about_text {
+  color: var(--font-color);
+}
+
+.information {
+  border-left: 5px solid var(--font-color);
+}
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+em {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #000;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked+.slider {
+  background-color: red;
+}
+
+input:checked+.slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
