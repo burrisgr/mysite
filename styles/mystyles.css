@@ -616,6 +616,77 @@ input[type=submit]:hover {
 
 }
 
+@media screen and (orientation:landscape) and (min-width: 319px) and (max-width: 480px) {
+  /* Your CSS Here*/
+  body {
+    background-color: coral;
+  }
+
+  #navbar {
+    padding: 27px;
+  }
+
+  #navbar a {
+    font-size: 2vw;
+  }
+
+  #topnav a {
+    font-size: 3vw;
+  }
+
+  .jumbotron_container {
+    height: 100vh;
+  }
+
+  .flex-container {
+    height: 75vh;
+  }
+
+  .center_text {
+    font-size: 7vw;
+  }
+
+  .about_container {
+    height: 100vh;
+  }
+
+  .flex_container2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex_img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex_text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .about_img {
+    padding: 5vw 1vw 0vw 1vw;
+  }
+
+  .about_text {
+    padding: 10px;
+    font-size: 1.5em;
+    color: white;
+  }
+
+  .contact_container {
+    max-height: 100vh;
+  }
+
+  .contact_img {
+    width: 100%;
+  }
+}
+
 :root {
   --primary-color: #302AE6;
   --secondary-color: red;
