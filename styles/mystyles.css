@@ -39,7 +39,7 @@ body {
 }
 
 #navbar a.icon {
-  background: #333;
+  /* background: #333; */
   display: block;
   position: absolute;
   right: 0;
